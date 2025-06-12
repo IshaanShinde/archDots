@@ -1,0 +1,31 @@
+{
+    "layer": "top",
+    "modules-right": ["network", "bluetooth", "battery", "clock"],
+
+    "network": {
+        "interface": "wlan0", // Change to your WiFi interface if needed
+        "format-wifi": " {essid} {signalStrength}%",
+        "format-disconnected": " Disconnected",
+        "on-click": "wofi-wifi-menu" // Or "wifi4wofi" if you use that script
+    },
+    "bluetooth": {
+        "format": "{status}",
+        "on-click": "~/.config/waybar/scripts/rofi-bluetooth &",
+        "format-disabled": "! ",
+        "format-off": "",
+        "format-on": "",
+        "format-connected": "",
+        "tooltip-format": "{status}"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M}",
+        "tooltip": false
+    }
+}
